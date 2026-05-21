@@ -14,9 +14,11 @@ jobs:
         run: echo "Checking if google is up..."
       - name: check google
         run: ping google.com
-        if = success()
       - name: Print success message
         run: echo "Google is up!"
+        if: success()
       - name: Print failure message
         run: echo "Google is down!"
-
+        if: failure()
+      - name: Print final message
+        run: echo "Hello World Workflow completed!"  
