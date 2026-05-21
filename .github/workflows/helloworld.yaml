@@ -1,9 +1,7 @@
 name: Hello World Workflow
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   hello-job:
@@ -13,7 +11,7 @@ jobs:
       - name: Print hello message
         run: echo "Checking if google is up..."
       - name: check google
-        run: ping google.com
+        run: timeout 5s ping google.com
       - name: Print success message
         run: echo "Google is up!"
         if: success()
