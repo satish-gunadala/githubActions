@@ -11,4 +11,12 @@ jobs:
 
     steps:
       - name: Print hello message
-        run: echo "Hello Satish, GitHub Actions is working!"
+        run: echo "Checking if google is up..."
+      - name: check google
+        run: ping google.com
+        if = success()
+      - name: Print success message
+        run: echo "Google is up!"
+      - name: Print failure message
+        run: echo "Google is down!"
+
