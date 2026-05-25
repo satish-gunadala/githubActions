@@ -6,5 +6,6 @@ resource "aws_instance" "git_hub_self_runner" {
     tags = {
         Name = "GitHub Self-Hosted Runner"
         Name = "GitHub Self-Hosted Runner2"
+        Name = "GitHub Self-Hosted Runner3"
     }
 }
